@@ -111,7 +111,7 @@ def main():
         teams = parse_standings(raw_data, day)
         pd_df = pd.DataFrame(teams)
 
-        save_to_csv(pd_df, file_path')
+        save_to_csv(pd_df, file_path)
 
 
 if __name__ == "__main__":
