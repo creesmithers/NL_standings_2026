@@ -28,8 +28,12 @@ def fetch_standings(league_id: int, date:str, season:int) -> dict:
            f'&standingsTypes=regularSeason'
            f'&date={date}'
     )
-    with urllib.request.urlopen(url) as response:
-        return json.loads(response.read())
+    try:
+        with urllib.request.urlopen(url) as response:
+            return json.loads(response.read())
+    except Exception as e:
+        print(f"API failed for {date}: {e}")
+        return {"records": []}
 
 def get_last_ten(team_record: dict) -> str:
     '''Pulls last 10 games'''
@@ -93,8 +97,14 @@ def save_to_csv(df: pd.DataFrame, filepath: str) -> None:
 
 def get_missing_dates(filepath: str, start_date: str) -> list:
     """ Returns list of missing dates between opening day and today"""
-    existing = pd.read_csv(filepath)
-    existing_dates = pd.to_datetime(existing['date'], format = 'mixed')
+
+    try:
+        existing = pd.read_csv(filepath)
+        existing_dates = pd.to_datetime(existing['date'], format = 'mixed')
+    except: FileNotFoundError:
+        expected = pd.date_range(start = start_date, end = datetime.today())
+        return expected.strftime('%Y-%m-%d'.).tolist()
+
     existing_dates = pd.DatetimeIndex(existing_dates)
     expected = pd.date_range(start = start_date, end = datetime.today())
     missing = expected.difference(existing_dates)
