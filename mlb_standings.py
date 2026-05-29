@@ -16,6 +16,7 @@ DIVISION_NAMES = {203: 'West', 205: 'Central', 204: 'East'}
 SEASON = 2026
 DATE = datetime.today().strftime('%Y-%m-%d')
 start_date = '2026-3-26'
+file_path = 'mlb_standings.csv'
 
 
 
@@ -104,7 +105,7 @@ def get_missing_dates(filepath: str, start_date: str) -> list:
 
 
 def main():
-    missing_dates = get_missing_dates(r'C:\Users\crees\OneDrive\Documents\Fun Analyst Projects\Baseball API\mlb_standings.csv', start_date)
+    missing_dates = get_missing_dates(file_path, start_date)
     for day in missing_dates:
         
         print(F'Fetching MLB Standings for {day}')
@@ -112,7 +113,7 @@ def main():
         teams = parse_standings(raw_data, day)
         pd_df = pd.DataFrame(teams)
 
-        save_to_csv(pd_df, r'C:\Users\crees\OneDrive\Documents\Fun Analyst Projects\Baseball API\mlb_standings.csv')
+        save_to_csv(pd_df, file_path')
 
 
 if __name__ == "__main__":
