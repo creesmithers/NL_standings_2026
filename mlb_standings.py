@@ -1,10 +1,8 @@
 import pandas as pd
-import numpy as np
 from datetime import datetime, timedelta, date
 import urllib.request
 import json
 
-import csv
 import os
 print('loaded!')
 
