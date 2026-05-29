@@ -101,7 +101,7 @@ def get_missing_dates(filepath: str, start_date: str) -> list:
     try:
         existing = pd.read_csv(filepath)
         existing_dates = pd.to_datetime(existing['date'], format = 'mixed')
-    except: FileNotFoundError:
+    except FileNotFoundError:
         expected = pd.date_range(start = start_date, end = datetime.today())
         return expected.strftime('%Y-%m-%d'.).tolist()
 
