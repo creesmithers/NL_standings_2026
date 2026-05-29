@@ -40,7 +40,7 @@ def get_last_ten(team_record: dict) -> str:
     for split in team_record['records']['splitRecords']:
         if split['type'] == 'lastTen':
             return [split['wins'], split['losses']]
-    return 'N/A'
+    return [0,0]
 
 def parse_standings(data:dict, day) -> list[dict]:
     """
