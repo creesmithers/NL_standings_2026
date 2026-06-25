@@ -13,6 +13,7 @@ LEAGUE_IDS = {'AL': 103, 'NL': 104}
 DIVISION_NAMES = {203: 'West', 205: 'Central', 204: 'East'}
 SEASON = 2026
 DATE = datetime.today().strftime('%Y-%m-%d')
+opening_day = '2026-03-26'
 past_week = (datetime.today() -timedelta(7)).strftime('%Y-%m-%d')
 file_path = 'mlb_standings.csv'
 
@@ -97,25 +98,25 @@ def save_to_csv(df: pd.DataFrame, filepath: str) -> None:
 
     print('Saved!')
 
-def get_missing_dates(filepath: str, past_week: str) -> list:
+def get_missing_dates(filepath: str, opening_day: str) -> list:
     """ Returns list of missing dates between opening day and today"""
 
     try:
         existing = pd.read_csv(filepath)
         existing_dates = pd.to_datetime(existing['date'], format = 'mixed')
     except FileNotFoundError:
-        expected = pd.date_range(start = past_week, end = datetime.today())
+        expected = pd.date_range(start = opening_day, end = datetime.today())
         return expected.strftime('%Y-%m-%d').tolist()
 
     existing_dates = pd.DatetimeIndex(existing_dates)
-    expected = pd.date_range(start = past_week, end = datetime.today())
+    expected = pd.date_range(start = opening_day, end = datetime.today())
     missing = expected.difference(existing_dates)
 
     return missing.strftime('%Y-%m-%d').tolist()
 
 
 def main():
-    missing_dates = get_missing_dates(file_path, past_week)
+    missing_dates = get_missing_dates(file_path, opening_day)
     for day in missing_dates:
         
         print(F'Fetching MLB Standings for {day}')
