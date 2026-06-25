@@ -61,7 +61,8 @@ def parse_standings(data:dict, day) -> list[dict]:
                 'last_10_losses': get_last_ten(team)[1],
                 'day_of_season': (date.fromisoformat(day)-date(2026, 3, 26)).days +1,
                 'division': DIVISION_NAMES.get(division_record['division']['id']),
-                'division_games_back': team['divisionGamesBack']
+                'division_games_back': team['divisionGamesBack'],
+                'division_rank': team['divisionRank']
             })
     
     return teams
