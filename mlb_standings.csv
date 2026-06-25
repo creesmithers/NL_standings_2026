@@ -1,4 +1,4 @@
-date,team,wins,losses,percent,run_diff,last_10_wins,last_10_losses,day_of_season,division
+date,team,wins,losses,percent,run_diff,last_10_wins,last_10_losses,day_of_season,division,division_games_back,division_rank
 3/26/2026,Mets,1,0,1,4,1,0,1,East
 3/26/2026,Nationals,1,0,1,6,1,0,1,East
 3/26/2026,Phillies,1,0,1,2,1,0,1,East
