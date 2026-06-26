@@ -13,7 +13,18 @@ Python, Pandas, PowerBI
 ## Dataset
 Data pulled using MLB API with Python. 
 New row added every day for each team with: 
- - Date, Team Name, Wins, Losses, Win %, Run Differential, Wins in last 10 games, Losses in last 10 games, Day of Season, Division, Games Back in the Division, and Division Rank
+ - Date
+ - Team Name
+ - Wins
+ - Losses
+ - Win %
+ - Run Differential
+ - Wins in last 10 games
+ - Losses in last 10 games
+ - Day of Season
+ - Division
+ - Games Back in the Division
+ - Division Rank
 
 ## Files
 MLB_NL_Dashboard.pbix   - Power Bi Interactive dashboard
