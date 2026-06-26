@@ -27,7 +27,8 @@ New row added every day for each team with:
  - Division Rank
 
 ## Files
-MLB_NL_Dashboard.pbix   - Power Bi Interactive dashboard
-MLB_NL_Dashboard.pdf    - PDF Of Power BI for easy viewing
-mlb_standings.csv       - daily updated data
-mlb_standings_script.py - Python script to pull, transform, and upload data.  
+- .github/workflows       - Allows for python script to autorun and update CSV daily
+- MLB_NL_Dashboard.pbix   - Power Bi Interactive dashboard
+- MLB_NL_Dashboard.pdf    - PDF Of Power BI for easy viewing
+- mlb_standings.csv       - daily updated data
+- mlb_standings_script.py - Python script to pull, transform, and upload data.  
