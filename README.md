@@ -1,6 +1,33 @@
 # NL_standings_2026
-Using API call to pull National League MLB standings, Python to transform and clean, and Power BI to visualize data
+How can you not be romantic about baseball?
 
-I started this project with a desire to build experience with API calls and my enjoyment of baseball.
+## Overview
+A quick breadown of the MLB National League. 
+An end-to-end project starting with MLB API pull with python, transformation with pandas, and visual created with Power BI. 
 
-Full read me to be included soon. 
+The objective was to give the viewer a real time look at the season and a quick glance without having to look through the MLB website for information. 
+
+## Tools
+Python, Pandas, PowerBI
+
+## Dataset
+Data pulled using MLB API with Python. 
+New row added every day for each team with: 
+ - Date
+ - Team Name
+ - Wins
+ - Losses
+ - Win %
+ - Run Differential
+ - Wins in last 10 games
+ - Losses in last 10 games
+ - Day of Season
+ - Division
+ - Games Back in the Division
+ - Division Rank
+
+## Files
+MLB_NL_Dashboard.pbix   - Power Bi Interactive dashboard
+MLB_NL_Dashboard.pdf    - PDF Of Power BI for easy viewing
+mlb_standings.csv       - daily updated data
+mlb_standings_script.py - Python script to pull, transform, and upload data.  
