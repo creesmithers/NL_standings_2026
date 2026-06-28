@@ -27,7 +27,7 @@ jobs:
           pip install pandas requests
 
       - name: Run MLB standings script
-        run: python mlb_standings.py
+        run: python mlb_standings_script.py
 
       - name: Commit updated CSV
         run: |
