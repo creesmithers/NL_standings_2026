@@ -1,4 +1,4 @@
-# MLB National League Standigns Dashboard
+# MLB National League Standings Dashboard
 
 ## Overview
 An automated, end-to-end analytics pipeline that tracks the full MLB National League season in rela time. A python scrips pulls daily standigns form the MLB API, runs an automated schedule via GItHub Actions, and feeds an interactive Power BI dashboard for exploring standigns, trends, and KPIs at a glance. 
